@@ -65,7 +65,6 @@ public class DeadlineTests {
         verifyPage.verify(verifyCode);
         verifyPage.getError();
     }
-
     @Test
     void PassThreeTimes() {
         var loginPage = open("http://localhost:9999", LoginPage.class);

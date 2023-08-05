@@ -7,6 +7,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import javax.management.Query;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class SQLHelper {
     private static QueryRunner runner = new QueryRunner();
@@ -15,8 +16,8 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    private static Connection getConnection() {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "user", "pass");
+    private static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
     }
 
     @SneakyThrows
