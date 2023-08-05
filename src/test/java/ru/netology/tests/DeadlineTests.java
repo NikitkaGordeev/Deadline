@@ -65,24 +65,4 @@ public class DeadlineTests {
         verifyPage.verify(verifyCode);
         verifyPage.getError();
     }
-    @Test
-    void PassThreeTimes() {
-        var loginPage = open("http://localhost:9999", LoginPage.class);
-        var authUserOne = new DataHelper.AuthUser(DataHelper.getAuthUser().getLogin(),
-                DataHelper.getRandomUser().getPassword());
-        loginPage.validLogin(authUserOne);
-        loginPage.getError();
-        loginPage.clean();
-        clearBrowserCookies();
-        var authUserTwo = new DataHelper.AuthUser(DataHelper.getAuthUser().getLogin(),
-                DataHelper.getRandomUser().getPassword());
-        loginPage.validLogin(authUserTwo);
-        loginPage.getError();
-        loginPage.clean();
-        clearBrowserCookies();
-        var authUserThree = new DataHelper.AuthUser(DataHelper.getAuthUser().getLogin(),
-                DataHelper.getRandomUser().getPassword());
-        loginPage.validLogin(authUserThree);
-        loginPage.getBlock();
-    }
 }

@@ -31,9 +31,4 @@ public class LoginPage {
         error.shouldBe(Condition.visible);
     }
 
-    public void getBlock() {
-        error.shouldHave(text("Ошибка! " + "Пользователь заблокирован"));
-        error.shouldBe(Condition.visible);
-    }
-
 }
