@@ -27,7 +27,6 @@ public class SQLHelper {
         var result = runner.query(connection, codeSQL, new ScalarHandler<String>());
         return new DataHelper.VerifyCode(result);
         }
-    }
 
     @SneakyThrows
     public static void cleanDB() {
