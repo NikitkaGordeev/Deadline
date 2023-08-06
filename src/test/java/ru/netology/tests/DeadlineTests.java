@@ -20,7 +20,7 @@ public class DeadlineTests {
     }
 
     @Test
-    void SuccessLogin() {
+    void successLogin() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authUser = DataHelper.getAuthUser();
         var verifyPage = loginPage.validLogin(authUser);
@@ -30,7 +30,7 @@ public class DeadlineTests {
     }
 
     @Test
-    void RandomUser() {
+    void randomUser() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getRandomUser();
         loginPage.validLogin(authInfo);
@@ -38,7 +38,7 @@ public class DeadlineTests {
     }
 
     @Test
-    void InvalidLogin() {
+    void invalidLogin() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authUser = new DataHelper.AuthUser(DataHelper.getRandomUser().getLogin(),
                 DataHelper.getAuthUser().getPassword());
@@ -47,7 +47,7 @@ public class DeadlineTests {
     }
 
     @Test
-    void InvalidPass() {
+    void invalidPass() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authUser = new DataHelper.AuthUser(DataHelper.getAuthUser().getLogin(),
                 DataHelper.getRandomUser().getPassword());
@@ -56,7 +56,7 @@ public class DeadlineTests {
     }
 
     @Test
-    void InvalidVerifyCode() {
+    void invalidVerifyCode() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authUser = DataHelper.getAuthUser();
         var verifyPage = loginPage.validLogin(authUser);

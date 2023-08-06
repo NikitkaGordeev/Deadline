@@ -23,7 +23,7 @@ public class SQLHelper {
     @SneakyThrows
     public static DataHelper.VerifyCode getVerifyCode() {
         var codeSQL = "SELECT code FROM auth_codes ORDER BY created DESC LIMIT 1";
-        try (var connection = getConnection()) {
+        var connection = getConnection();{
             var result = runner.query(connection, codeSQL, new ScalarHandler<String>());
             return new DataHelper.VerifyCode(result);
         }
